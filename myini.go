@@ -8,6 +8,7 @@ import (
 	"gopkg.in/ini.v1"
 
 	"github.com/alrusov/log"
+	"github.com/alrusov/misc"
 )
 
 //----------------------------------------------------------------------------------------------------------------------------//
@@ -56,8 +57,8 @@ func OpenIniFile() bool {
 }
 
 // GetSectionValues --
-func GetSectionValues(name string) map[string]string {
-	ret := make(map[string]string)
+func GetSectionValues(name string) misc.StringMap {
+	ret := make(misc.StringMap)
 
 	sect := iniFile.Section(name)
 	if sect != nil {
